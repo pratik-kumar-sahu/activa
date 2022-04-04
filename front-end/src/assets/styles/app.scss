@@ -1,0 +1,236 @@
+@import url('https://fuzz-ui.netlify.app/styles/FuzzUI.css');
+
+:root {
+	--color-sidebar: #252550;
+	--color-mainBody: #14133f;
+
+	--color-textLight: #f1f5f9;
+	--color-text: #cbd5e1;
+}
+
+body {
+	background-color: var(--color-mainBody);
+	color: var(--color-text);
+	overflow: hidden;
+	overflow-y: scroll;
+	position: relative;
+}
+
+// -------------->
+
+.routeContainer {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	overflow-y: scroll;
+	padding-top: 7rem;
+	padding-left: 4rem;
+
+	&-customWidth {
+		width: calc(100vw - 25rem);
+		height: 100vh;
+		overflow: hidden;
+		overflow-y: scroll;
+		padding-top: 7rem;
+		padding-left: 4rem;
+	}
+}
+
+.home {
+	&-parentSection {
+		&__heading {
+			font-size: 3rem;
+			font-weight: bold;
+		}
+
+		&__para {
+			font-size: 2rem;
+			font-weight: 300;
+		}
+
+		&__section {
+			height: auto;
+
+			&--heading {
+				font-size: 1.6rem;
+				font-weight: 700;
+				margin-top: 3rem;
+			}
+
+			&--content {
+				overflow: hidden;
+				overflow-x: scroll;
+			}
+		}
+	}
+}
+
+.videoCard {
+	width: 30rem;
+	min-width: 30rem;
+	height: 23rem;
+	margin-right: 2rem;
+	margin-top: 3rem;
+
+	&-showcase {
+		width: 100%;
+		height: 17rem;
+		border-radius: 1.5rem;
+		position: relative;
+		cursor: pointer;
+
+		&__image {
+			height: 20rem;
+			position: absolute;
+			bottom: 0;
+			right: 0.5rem;
+		}
+	}
+
+	&-info {
+		font-size: 1.4rem;
+	}
+}
+
+.heroCard {
+	min-width: 15rem;
+	max-width: 20rem;
+	height: 20rem;
+	margin-right: 2rem;
+	margin-top: 2rem;
+	border-radius: 1.5rem;
+	overflow: hidden;
+	background: linear-gradient(to top right, #22c55e, #bbf7d0);
+
+	&-showcase {
+		width: 100%;
+		height: 100%;
+		border-radius: 1.5rem;
+		cursor: pointer;
+
+		&__image {
+			width: 100%;
+			height: 20rem;
+			object-fit: cover;
+		}
+	}
+}
+
+.cursorPointer {
+	cursor: pointer;
+}
+
+.menu {
+	width: 25rem;
+	height: 100vh;
+	overflow: hidden;
+	overflow-y: scroll;
+	background-color: var(--color-sidebar);
+	border-top-right-radius: 4rem;
+	border-bottom-right-radius: 4rem;
+}
+
+.iconSet1 {
+	background-color: var(--color-sidebar);
+	width: 4rem;
+	height: 4rem;
+	padding: 0.8rem;
+	border-radius: 50%;
+	cursor: pointer;
+	position: fixed;
+
+	&-menu {
+		top: 2rem;
+		left: 2rem;
+	}
+
+	&-search {
+		top: 2rem;
+		right: 8rem;
+	}
+
+	&-chat {
+		top: 2rem;
+		right: 2rem;
+	}
+}
+
+// -------------------> VideoInfo
+
+.video {
+	display: flex;
+	margin-left: 1rem;
+	margin-right: 5rem;
+	height: calc(100vh - 7rem);
+
+	&-content {
+		width: 100%;
+		padding-bottom: 2rem;
+		overflow: hidden;
+		overflow-y: scroll;
+
+		&__watch {
+			width: 100%;
+			height: 45rem;
+			margin-bottom: 2rem;
+			border-radius: 2rem;
+			overflow: hidden;
+
+			&--video {
+				width: 90%;
+				border-radius: 2rem;
+			}
+
+			&--like {
+				width: 10%;
+				border-radius: 2rem;
+
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+
+		&__recommended {
+			&--videoList {
+				width: 90%;
+				display: flex;
+				flex-wrap: wrap;
+			}
+		}
+	}
+
+	&-userInfo {
+		width: 40rem;
+		overflow: hidden;
+		overflow-y: scroll;
+
+		&__watchCard {
+			display: flex;
+			align-items: center;
+		}
+	}
+}
+
+.recommendCard {
+	width: 24rem;
+	height: 16rem;
+	margin: 0.5rem;
+	border-radius: 2rem;
+	background: linear-gradient(to top right, #22c55e, #bbf7d0);
+
+	&-text {
+		color: black;
+	}
+}
+
+.iconDefault {
+	padding: 0.8rem;
+	margin: 0.5rem;
+	font-size: 3.5rem;
+	color: black;
+	background-color: white;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
