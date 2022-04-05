@@ -16,7 +16,7 @@ export const VideoInfo = () => {
 						className='video-content__watch--video'
 						width='100%'
 						height='450'
-						src='https://www.youtube.com/embed/GU5vd5Z28UQ'
+						src={`https://www.youtube.com/embed/${'GU5vd5Z28UQ'}`}
 						title='YouTube video player'
 						frameBorder='0'
 						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
@@ -32,7 +32,7 @@ export const VideoInfo = () => {
 					</span>
 				</div>
 				<div className='video-content__recommended'>
-					<h3 className='my-5'>Continue Playing</h3>
+					<h3 className='my-5'>Continue Playing...</h3>
 					<div className='video-content__recommended--videoList'>
 						{[2, 3, 4, 5, 6, 7, 8, 9, 10].map((e) => {
 							return (
