@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 
 export const VideoCard = (props) => {
-	const { image, title, brand, color1, color2 } = props.videoCardData;
+	const { _id, image, title, brand, color1, color2 } = props.videoCardData;
 	const navigate = useNavigate();
 
 	return (
-		<div className='videoCard' onClick={() => navigate('/watch')}>
+		<div className='videoCard' onClick={() => navigate(`/gameplays/${_id}`)}>
 			<div
 				style={{ backgroundImage: `linear-gradient(to right, #${color1}, #${color2})` }}
 				className='videoCard-showcase mb-3'

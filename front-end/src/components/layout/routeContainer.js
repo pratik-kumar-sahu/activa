@@ -7,7 +7,7 @@ export const RouteContainer = ({ showMenu }) => {
 		<div className={`routeContainer${showMenu ? '-customWidth' : ''}`}>
 			<Routes>
 				<Route path='/' element={<Home />} />
-				<Route path='/watch' element={<VideoInfo />} />
+				<Route path='/gameplays/:gameplayId' element={<VideoInfo />} />
 			</Routes>
 		</div>
 	);

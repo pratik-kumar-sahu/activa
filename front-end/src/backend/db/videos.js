@@ -6,7 +6,7 @@ import { v4 as uuid } from 'uuid';
 
 import { images } from '../../assets/images';
 
-const { redDead } = images;
+const { redDead, fortnite, cyberpunk } = images;
 
 export const videos = [
 	{
@@ -88,12 +88,85 @@ export const videos = [
 					'https://i.ytimg.com/vi/2ZBt34rXzMU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBb5qKVlCJxZR68RUbjZOWrs6Qbxg'
 			}
 		]
+	},
+	{
+		_id: uuid(),
+		title: 'Fortnite',
+		brand: 'Epic Games',
+		image: fortnite,
+		color1: '0369a1',
+		color2: '7dd3fc',
+		episodes: [
+			{
+				episode: 1,
+				name: 'Battle Royale! Squads, Solo, and 50 V 50!',
+				videoId: 'kbd4GMSqlec',
+				thumbnail:
+					'https://i.ytimg.com/vi/kbd4GMSqlec/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCoPnZD6zy6f5cHVwyoZ0ENqAlVQA'
+			},
+			{
+				episode: 2,
+				name: 'Duos #1 VICTORY ROYALE with Zanitor!',
+				videoId: 'Ce_6eAPHhqU',
+				thumbnail:
+					'https://i.ytimg.com/vi/Ce_6eAPHhqU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDtDGTgNG6MfM6En5rb_nUOeLGVDg'
+			},
+			{
+				episode: 3,
+				name: 'Final Fight #1 VICTORY ROYALE with Zanitor!',
+				videoId: '6rSeK10t8Nc',
+				thumbnail:
+					'https://i.ytimg.com/vi/6rSeK10t8Nc/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLC-4Qhs15oQtFeNWjx7OKxPseUeYg'
+			},
+			{
+				episode: 4,
+				name: 'Duos Hiding Strategy! #1 VICTORY ROYALE with Zanitor!',
+				videoId: 'QNKuxtnDrSA',
+				thumbnail:
+					'https://i.ytimg.com/vi/QNKuxtnDrSA/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDzU4SgBTNTP-3j-RBT6-8dfvriSQ'
+			},
+			{
+				episode: 5,
+				name: 'Oblivion Skin! 50 v 50! #1 VICTORY ROYALE with Zanitor!',
+				videoId: 'Z2V_QGWeWyQ',
+				thumbnail:
+					'https://i.ytimg.com/vi/Z2V_QGWeWyQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLCOpNBGXDST0gT3gaIPdpHbm--_3A'
+			},
+			{
+				episode: 6,
+				name: 'Season 5 Battle Pass with Zanitor!',
+				videoId: 'VjSBLD7QA10',
+				thumbnail:
+					'https://i.ytimg.com/vi/VjSBLD7QA10/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLBGWdOFyJUyKoFHnNaNW0GvAjKd0w'
+			},
+			{
+				episode: 7,
+				name: 'New Magnus Skin! #1 Victory Royale',
+				videoId: 'D67sv4amhOQ',
+				thumbnail:
+					'https://i.ytimg.com/vi/D67sv4amhOQ/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLB6se2ANFx_f4woSfsmmIUMnmrM0Q'
+			},
+			{
+				episode: 8,
+				name: '7 Kills in Duos! Redline Skin!',
+				videoId: 'a3WKqHqi6ys',
+				thumbnail:
+					'https://i.ytimg.com/vi/a3WKqHqi6ys/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLDY2taucDv5JLCWuSiBZy-EHtYDgA'
+			},
+			{
+				episode: 9,
+				name: 'Flytrap Skin! Squads #1 Victory Royale!',
+				videoId: 'yNRwv6fe-mU',
+				thumbnail:
+					'https://i.ytimg.com/vi/yNRwv6fe-mU/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLD7n89qHwN3iYCYmjqxOyS8_P73cA'
+			},
+			{
+				episode: 10,
+				name: 'New Submachine Gun! 50 v 50 #1 Victory Royale!',
+				videoId: 'Z-8l3skgF-E',
+				thumbnail:
+					'https://i.ytimg.com/vi/Z-8l3skgF-E/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAzKjbI5eBXGExjmjeXsS1_W8VvCw'
+			}
+		]
 	}
-	// {
-	// 	_id: uuid(),
-	// 	title: 'Neural Networks from Scratch - P.1 Intro and Neuron Code',
-	// 	creator: 'Sentdex',
-	// 	description:
-	// 		'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.'
-	// }
 ];

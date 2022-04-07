@@ -23,20 +23,7 @@ export const Home = () => {
 					<h3 className='home-parentSection__section--heading'>Top Gameplays</h3>
 					<div className='home-parentSection__section--content flex-row'>
 						{videoState.videos.map((video) => {
-							const { image, title, brand, color1, color2 } = video;
-
-							return (
-								<VideoCard
-									key={video._id}
-									videoCardData={{
-										image,
-										title,
-										brand,
-										color1,
-										color2
-									}}
-								/>
-							);
+							return <VideoCard key={video._id} videoCardData={video} />;
 						})}
 					</div>
 				</section>
