@@ -7,7 +7,12 @@ export const useVideoContext = () => useContext(VideoContext);
 
 export const VideoContextProvider = ({ children }) => {
 	const initialState = {
-		videos: []
+		videos: [],
+		likedVideos: [],
+		dislikedVideos: [],
+		watchLater: [],
+		watchedHistory: [],
+		playlist: []
 	};
 
 	const [state, dispatch] = useReducer(videoReducer, initialState);

@@ -1,15 +1,24 @@
-import { AiOutlineLike, AiOutlineDislike } from 'react-icons/ai';
+import { AiOutlineLike, AiOutlineDislike, AiFillLike, AiFillDislike } from 'react-icons/ai';
 import {
 	MdOutlineWatchLater,
 	MdOutlinePlaylistAdd,
 	MdOutlineShare,
 	MdOutlinedFlag,
-	MdPlayCircleOutline
+	MdPlayCircleOutline,
+	MdWatchLater
 } from 'react-icons/md';
 import { useVideoContext } from '../state/contexts';
 import { useParams } from 'react-router-dom';
 import { EpisodeCard } from '../components/common';
 import { useEffect, useState } from 'react';
+import {
+	addToWatchlater,
+	dislikeVideo,
+	likeVideo,
+	removeFromWatchlater,
+	revertDislikeVideo,
+	revertLikeVideo
+} from '../state/serverRequests';
 
 export const VideoInfo = () => {
 	const { gameplayId } = useParams();
@@ -18,11 +27,21 @@ export const VideoInfo = () => {
 	const [selectedEpisode, setSelectedEpisode] = useState({});
 
 	const {
-		state: { videos }
+		state: { videos },
+		dispatch
 	} = useVideoContext();
 
 	useEffect(() => {
-		setSelectedGameplay(videos.find((video) => video._id === gameplayId));
+		if (
+			Object.keys(selectedEpisode).length === 0 &&
+			Object.keys(selectedGameplay).length !== 0
+		) {
+			setSelectedEpisode(selectedGameplay.episodes[0]);
+		}
+	}, [selectedGameplay]);
+
+	useEffect(() => {
+		setSelectedGameplay(videos.find((video) => video._id == gameplayId));
 	}, [videos]);
 
 	return Object.keys(selectedGameplay).length !== 0 ? (
@@ -45,9 +64,75 @@ export const VideoInfo = () => {
 					})()}
 
 					<span className='video-content__watch--like'>
-						<AiOutlineLike className='iconDefault' />
-						<AiOutlineDislike className='iconDefault' />
-						<MdOutlineWatchLater className='iconDefault' />
+						{selectedEpisode.like ? (
+							<AiFillLike
+								className='iconDefault'
+								onClick={() =>
+									revertLikeVideo(
+										selectedGameplay._id,
+										selectedEpisode.episode,
+										dispatch
+									)
+								}
+							/>
+						) : (
+							<AiOutlineLike
+								className='iconDefault'
+								onClick={() =>
+									likeVideo(
+										selectedGameplay._id,
+										selectedEpisode.episode,
+										dispatch
+									)
+								}
+							/>
+						)}
+						{selectedEpisode.dislike ? (
+							<AiFillDislike
+								className='iconDefault'
+								onClick={() =>
+									revertDislikeVideo(
+										selectedGameplay._id,
+										selectedEpisode.episode,
+										dispatch
+									)
+								}
+							/>
+						) : (
+							<AiOutlineDislike
+								className='iconDefault'
+								onClick={() =>
+									dislikeVideo(
+										selectedGameplay._id,
+										selectedEpisode.episode,
+										dispatch
+									)
+								}
+							/>
+						)}
+						{selectedEpisode.watchLater ? (
+							<MdWatchLater
+								className='iconDefault'
+								onClick={() =>
+									removeFromWatchlater(
+										selectedGameplay._id,
+										selectedEpisode.episode,
+										dispatch
+									)
+								}
+							/>
+						) : (
+							<MdOutlineWatchLater
+								className='iconDefault'
+								onClick={() =>
+									addToWatchlater(
+										selectedGameplay._id,
+										selectedEpisode.episode,
+										dispatch
+									)
+								}
+							/>
+						)}
 						<MdOutlinePlaylistAdd className='iconDefault' />
 						<MdOutlineShare className='iconDefault' />
 						<MdOutlinedFlag className='iconDefault' />
@@ -72,17 +157,15 @@ export const VideoInfo = () => {
 				</div>
 			</div>
 			<div className='video-userInfo'>
-				<h3 className='mb-4'>Continue Watching</h3>
-				{[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 10, 11, 12, 13, 14, 15].map(
-					(e, i) => {
-						return (
-							<div key={i} className='video-userInfo__watchCard'>
-								<MdPlayCircleOutline className='iconDefault' />
-								<p className='ml-4'>The Witcher</p>
-							</div>
-						);
-					}
-				)}
+				<h3 className='mb-4'>Watch History</h3>
+				{[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((e, i) => {
+					return (
+						<div key={i} className='video-userInfo__watchCard'>
+							<MdPlayCircleOutline className='iconDefault' />
+							<p className='ml-4'>The Witcher</p>
+						</div>
+					);
+				})}
 			</div>
 			<div></div>
 		</div>
